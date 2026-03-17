@@ -50,11 +50,24 @@
 }
 @media (max-width: 480px) {
   .stats {
-    padding: 60px 0;
-    margin: 20px 0; /* Add margin to separate from Hero */
+    padding: 50px 0;
   }
-  .stats__grid { grid-template-columns: 1fr; }
   .stat-card {
-    padding: 30px 20px;
+    padding: 28px 16px;
+  }
+  .stat-card__value {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+  .stat-card__label {
+    font-size: 0.72rem;
+  }
+}
+@media (max-width: 360px) {
+  .stats__grid { grid-template-columns: repeat(2, 1fr); }
+  .stat-card {
+    padding: 22px 10px;
+  }
+  .stat-card__value {
+    font-size: 1.8rem;
   }
 }

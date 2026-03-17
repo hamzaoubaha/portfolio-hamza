@@ -4,33 +4,25 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1;
-  pointer-events: auto;
+  z-index: 0; /* Sits above background color but below everything else */
+  pointer-events: none; /* NEVER block clicks/scrolls */
   background-color: var(--color-bg);
-  overflow: hidden; /* Hide the overflowed logo */
+  overflow: hidden;
 }
 
 .spline-bg spline-viewer {
   width: 100%;
-  height: calc(100% + 200px); /* Oversize to hide watermark */
+  height: calc(100% + 200px);
   position: absolute;
-  top: -100px; /* Offset to keep the original center aligned with the screen */
+  top: -100px;
   left: 0;
+  pointer-events: none; /* Ensure the inner viewer also doesn't capture events */
 }
 
+/* On mobile: hide Spline entirely to avoid it overlapping content */
 @media (max-width: 768px) {
-  .spline-bg spline-viewer {
-    height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.7); /* Perfect center scaling */
-    transform-origin: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .spline-bg spline-viewer {
-    transform: translate(-50%, -50%) scale(0.55); /* Smaller for narrow phones */
+  .spline-bg {
+    display: none;
   }
 }
 

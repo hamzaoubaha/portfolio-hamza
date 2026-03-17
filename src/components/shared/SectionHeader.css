@@ -48,9 +48,28 @@
 
 @media (max-width: 768px) {
   .section-header {
-    margin-bottom: 40px;
+    margin-bottom: 36px;
   }
   .section-header--center {
-    margin-bottom: 40px;
+    margin-bottom: 36px;
+  }
+  .section-header__subtitle {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header {
+    margin-bottom: 28px;
+  }
+  .section-header--center {
+    margin-bottom: 28px;
+  }
+  .section-header__eyebrow {
+    font-size: 0.68rem;
+    padding: 3px 10px;
+  }
+  .section-header__subtitle {
+    font-size: 0.88rem;
   }
 }

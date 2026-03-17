@@ -47,4 +47,6 @@
 }
 @media (max-width: 640px) {
   .portfolio__grid { grid-template-columns: 1fr; }
+  .portfolio__filters { gap: 6px; margin-bottom: 32px; }
+  .portfolio__filter-btn { padding: 7px 14px; font-size: 0.8rem; }
 }

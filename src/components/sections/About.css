@@ -156,10 +156,34 @@
 @media (max-width: 900px) {
   .about__inner {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
-  .about__visual { display: none; }
-  .about__pillars { grid-template-columns: 1fr; }
+  .about__visual { 
+    display: flex;
+    justify-content: center;
+  }
+  .about__avatar-wrapper {
+    width: 220px;
+    height: 250px;
+  }
+  .about__avatar {
+    width: 160px;
+    height: 160px;
+  }
+  .about__stat-card { display: none; }
+  .about__pillars { grid-template-columns: 1fr 1fr; }
 }
-@media (max-width: 480px) {
+
+@media (max-width: 640px) {
   .about__pillars { grid-template-columns: 1fr; }
+  .about__actions { flex-direction: column; align-items: flex-start; }
+  .about__visual { display: none; }
+}
+
+@media (max-width: 480px) {
+  .about__pillars { grid-template-columns: 1fr; gap: 10px; }
+  .about__pillar { padding: 14px; }
+  .about__bio { font-size: 0.88rem; }
+  .about__actions { flex-direction: column; width: 100%; }
+  .about__actions > * { width: 100%; }
 }

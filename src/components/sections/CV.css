@@ -224,9 +224,20 @@
   flex-direction: column;
   gap: 12px;
   margin-top: auto;
+}
+
+@media (max-width: 1024px) {
   .cv__grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
 }
 
 @media (max-width: 768px) {
   .cv__grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+  .cv-card__body { padding: 20px; }
+}
+
+@media (max-width: 480px) {
+  .cv__grid { max-width: 100%; }
+  .cv-card__header { padding: 28px 18px 22px; }
+  .cv-card__body { padding: 16px; }
+  .cv-card__name { font-size: 1.2rem; }
 }

@@ -66,4 +66,8 @@
 }
 @media (max-width: 640px) {
   .services__grid { grid-template-columns: 1fr; }
+  .service-card { padding: 24px 20px; }
+}
+@media (max-width: 360px) {
+  .service-card { padding: 20px 16px; }
 }

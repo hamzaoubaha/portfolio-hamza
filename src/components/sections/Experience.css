@@ -103,10 +103,31 @@
   line-height: 1.7;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .timeline-item {
-    grid-template-columns: 1px 1fr;
-    gap: 0 16px;
+    grid-template-columns: 32px 1fr;
+    gap: 0 12px;
   }
   .timeline-item__year { display: none; }
+  .timeline-item__card {
+    padding: 18px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-item__card {
+    padding: 14px 16px;
+    margin-bottom: 20px;
+  }
+  .timeline-item__title { font-size: 0.92rem; }
+  .timeline-item__desc { font-size: 0.82rem; }
+}
+
+@media (max-width: 360px) {
+  .timeline {
+    padding: 0 4px;
+  }
+  .timeline-item__card {
+    padding: 12px 14px;
+  }
 }

@@ -147,11 +147,23 @@
 @media (max-width: 768px) {
   .footer__top {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 28px;
   }
   .footer__bottom {
     flex-direction: column;
     gap: 8px;
     text-align: center;
+  }
+}
+@media (max-width: 480px) {
+  .footer {
+    padding: 40px 0 28px;
+  }
+  .footer__tagline {
+    font-size: 0.82rem;
+  }
+  .footer__copy,
+  .footer__built {
+    font-size: 0.75rem;
   }
 }

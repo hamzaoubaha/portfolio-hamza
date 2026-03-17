@@ -140,41 +140,75 @@ button {
 
 /* ===================== CONTAINER ===================== */
 .container {
-  max-width: 1100px; /* Slightly narrower to emphasize the float */
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 40px;
   width: 100%;
 }
 
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 32px;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
-    padding: 0 30px; /* Stronger margins on mobile for floating effect */
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 0 12px;
   }
 }
 
 @media (min-width: 1400px) {
   .container {
     max-width: 1200px;
-    padding: 0 80px; /* Much larger breathing room on very wide screens */
+    padding: 0 80px;
   }
 }
 
 main {
-  padding: 40px 0; /* Add top/bottom padding to the whole page container */
+  padding: 40px 0;
+  position: relative;
+  z-index: 1; /* Stay above the Spline background (z-index: 0) */
 }
 
 
 /* ===================== LAYOUT ===================== */
 .page-padding {
-  padding-top: 100px; /* Account for navbar */
+  padding-top: 80px;
   min-height: calc(100vh - 72px);
+  position: relative;
+  z-index: 1;
 }
 
 /* ===================== SECTION ===================== */
 .section {
-  padding: 100px 0;
+  padding: 80px 0;
   position: relative;
   background-color: transparent !important;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 48px 0;
+  }
 }
 
 .section-glass {
@@ -287,26 +321,29 @@ main {
     --section-padding: 80px 0;
   }
 }
+
 @media (max-width: 768px) {
   :root {
-    --section-padding: 64px 0;
-    --container-padding: 0 30px;
+    --section-padding: 60px 0;
+    --container-padding: 0 20px;
   }
   html { font-size: 14px; }
-  h1 { font-size: 2rem !important; }
-  h2 { font-size: 1.6rem !important; }
+  h1 { font-size: 1.9rem !important; }
+  h2 { font-size: 1.5rem !important; }
 }
 
 @media (max-width: 480px) {
   :root {
     --section-padding: 48px 0;
-    --container-padding: 0 25px; /* Ensure floating effect on small screens */
+    --container-padding: 0 16px;
   }
   html { font-size: 13px; }
-  h1 { font-size: 1.8rem !important; }
-  h2 { font-size: 1.4rem !important; }
-  
-  .container {
-    padding: 0 20px; /* Force side margins even on tiny screens */
-  }
+  h1 { font-size: 1.65rem !important; }
+  h2 { font-size: 1.3rem !important; }
+}
+
+@media (max-width: 360px) {
+  html { font-size: 12px; }
+  h1 { font-size: 1.5rem !important; }
+  h2 { font-size: 1.2rem !important; }
 }

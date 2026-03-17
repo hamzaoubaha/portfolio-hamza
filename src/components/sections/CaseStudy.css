@@ -150,4 +150,13 @@
   .case-study__two-col,
   .case-study__process { grid-template-columns: 1fr; }
   .case-study__project-title { flex-direction: column; }
+  .case-study__result { padding: 28px; }
+}
+
+@media (max-width: 480px) {
+  .case-study__box { padding: 20px 16px; }
+  .case-study__step { padding: 20px 16px; }
+  .case-study__result { padding: 20px 16px; }
+  .case-study__project-title { padding: 18px; }
+  .case-study__metric { padding: 8px 14px; font-size: 0.8rem; }
 }
