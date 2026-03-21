@@ -1,0 +1,122 @@
+/* =================================================================
+   ProjectsHero — Floating cards hero
+   KEY FIX: NO overflow:hidden, NO isolation:isolate — so the
+   SplineBackground (position:fixed, z-index:-1) remains visible.
+   ================================================================= */
+
+.ph-hero {
+  position: relative;
+  min-height: calc(100vh - 130px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* ⚠️  Do NOT add overflow:hidden or isolation here — it would
+         clip the fixed SplineBackground at z-index:-1            */
+}
+
+/* ── Absolute card stage ─────────────────────────────────── */
+.ph-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none; /* stage itself transparent to clicks */
+}
+
+/* ── Per-card parallax wrapper ───────────────────────────── */
+.ph-wrap {
+  position: absolute;
+  pointer-events: all; /* cards ARE clickable */
+  will-change: transform;
+}
+
+/* ── Card face ───────────────────────────────────────────── */
+.ph-card {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.22),
+    0  3px 10px rgba(0, 0, 0, 0.12),
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.70);
+  border: 2px solid rgba(255, 255, 255, 0.60);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.ph-card:hover {
+  box-shadow:
+    0 30px 80px rgba(79, 142, 247, 0.28),
+    0  6px 22px rgba(0, 0, 0, 0.16),
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.85);
+  border-color: rgba(255, 255, 255, 0.90);
+}
+
+/* Image — fixed aspect ratio so landscape cards are consistent */
+.ph-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  filter: brightness(1.04) saturate(1.08);
+  transition: filter 0.3s ease;
+}
+.ph-card:hover img {
+  filter: brightness(1.12) saturate(1.18);
+}
+
+/* Portrait (phone screenshot) cards — natural 9:16 ratio */
+.ph-card--portrait img {
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
+
+
+.ph-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+
+/* ── Centre frosted panel ────────────────────────────────── */
+.ph-panel {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+
+  border: 1.5px solid rgba(255, 255, 255, 0.65);
+  border-radius: 28px;
+  padding: 52px 68px;
+  max-width: 560px;
+
+  box-shadow:
+    0 8px 48px rgba(0, 0, 0, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .ph-wrap  { transform: scale(0.85); transform-origin: center; }
+  .ph-panel { padding: 42px 44px; border-radius: 22px; }
+}
+
+@media (max-width: 768px) {
+  .ph-hero  { min-height: 100svh; }
+  .ph-wrap  { transform: scale(0.70); transform-origin: center; }
+  .ph-panel { padding: 36px 28px; border-radius: 18px; max-width: 88vw; }
+}
+
+@media (max-width: 480px) {
+  .ph-wrap  { display: none; } /* hide floaters on tiny screens to avoid clutter */
+  .ph-panel { padding: 30px 20px; border-radius: 14px; }
+}

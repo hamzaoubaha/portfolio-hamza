@@ -1,7 +1,7 @@
 import Portfolio from '../components/sections/Portfolio';
 import FeaturedProjects from '../components/sections/FeaturedProjects';
 import CaseStudy from '../components/sections/CaseStudy';
-import SectionHeader from '../components/shared/SectionHeader';
+import ProjectsHero from '../components/sections/ProjectsHero';
 import { motion } from 'framer-motion';
 
 const Projects = () => {
@@ -13,14 +13,7 @@ const Projects = () => {
       transition={{ duration: 0.5 }}
       className="page-padding"
     >
-      <div className="container">
-        <SectionHeader 
-          eyebrow="// Portfolio"
-          title="My Recent"
-          titleAccent="Work"
-          subtitle="A showcase of my favorite projects, ranging from front-end experiments to full-stack applications."
-        />
-      </div>
+      <ProjectsHero />
       <Portfolio />
       <FeaturedProjects />
       <CaseStudy />
@@ -29,3 +22,4 @@ const Projects = () => {
 };
 
 export default Projects;
+

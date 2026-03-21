@@ -35,7 +35,7 @@ const Contact = () => {
     <section id="contact" className="section contact">
       <div className="contact__glow" />
       <div className="container">
-        <AnimatedSection>
+        <AnimatedSection className="contact__hero">
           <SectionHeader
             eyebrow="// Contact"
             title="Let's Work"

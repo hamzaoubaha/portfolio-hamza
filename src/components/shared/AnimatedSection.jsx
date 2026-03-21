@@ -10,7 +10,7 @@ const AnimatedSection = ({
   threshold = 0.1,
 }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-60px', amount: threshold });
+  const isInView = useInView(ref, { once: true, margin: '-10px', amount: threshold });
 
   const directionMap = {
     up: { y: 48, x: 0 },

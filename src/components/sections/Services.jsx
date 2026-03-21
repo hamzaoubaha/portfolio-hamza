@@ -16,7 +16,7 @@ const COLOR_MAP = {
 const Services = () => (
   <section id="services" className="section services">
     <div className="container">
-      <AnimatedSection>
+      <AnimatedSection className="services__hero">
         <SectionHeader
           eyebrow="// Services"
           title="What I can"

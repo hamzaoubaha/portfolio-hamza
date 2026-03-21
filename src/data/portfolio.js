@@ -13,8 +13,8 @@ export const personal = {
 I believe in honest progress and the power of practice. Every project I build is a learning opportunity that brings me closer to becoming a proficient developer. I am serious about my growth and look forward to contributing to meaningful projects.`,
   location: "Morocco",
   available: true,
-  email: "hamzaa.ooubaha@gmail.com", 
-  phone: null,
+  email: "hamzaa.ooubaha@gmail.com",
+  phone: "0657494705",
   cvUrl: null,
   avatar: null,
   social: {
@@ -35,17 +35,17 @@ export const skills = [
   {
     category: "Frontend",
     color: "accent",
-    items: ["HTML5", "CSS3", "JavaScript", "React", "Responsive Design"],
+    items: ["HTML5", "CSS3", "JavaScript", "React", "Responsive Design", "Wordpress", "bootstrap", "tailwind css", "framer motion "],
   },
   {
     category: "Backend (Learning)",
     color: "emerald",
-    items: ["PHP Basics", "Laravel Fundamentals", "MySQL", "CRUD Operations"],
+    items: ["PHP", "Laravel", "MySQL", "Node.js ", "NOSQL", "MongoDB"],
   },
   {
     category: "Tools",
     color: "purple",
-    items: ["Git & GitHub", "Vite", "VS Code", "NPM"],
+    items: ["Git & GitHub & Gitlab ", "docker", "sonarqube", "NPM", "figma", "postman"],
   },
   {
     category: "Laravel Specifics",

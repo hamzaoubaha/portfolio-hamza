@@ -189,10 +189,18 @@ main {
 
 /* ===================== LAYOUT ===================== */
 .page-padding {
-  padding-top: 80px;
   min-height: calc(100vh - 72px);
   position: relative;
   z-index: 1;
+}
+
+.page-hero {
+  min-height: calc(100vh - 160px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
 /* ===================== SECTION ===================== */
