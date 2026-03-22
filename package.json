@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build --outDir dist --base /Oubaha/",
-    "preview": "vite preview --outDir dist --base /Oubaha/",
+    "build": "vite build",
+    "preview": "vite preview",
     "predeploy": "cross-env VITE_BASE_PATH=/Oubaha/ npm run build",
     "deploy": "gh-pages -d dist"
   },
